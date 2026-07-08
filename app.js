@@ -377,6 +377,13 @@ function generateCode() {
         }
       });
       
+      // Set viewBox attribute dynamically for responsive scaling
+      const widthAttr = barcodeSvg.getAttribute('width');
+      const heightAttr = barcodeSvg.getAttribute('height');
+      if (widthAttr && heightAttr) {
+        barcodeSvg.setAttribute('viewBox', `0 0 ${widthAttr} ${heightAttr}`);
+      }
+      
       codeInfoDiv.textContent = `Barcode | Format: ${format} | Length: ${value.length} chars`;
       codeInfoDiv.style.color = 'var(--text-secondary)';
       updateUIState(true);

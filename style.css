@@ -113,13 +113,13 @@ main {
   margin: 0 auto;
   padding: 2.5rem 2rem;
   display: grid;
-  grid-template-columns: 1.5fr 1fr;
+  grid-template-columns: minmax(0, 1.5fr) minmax(0, 1fr);
   gap: 2rem;
 }
 
 @media (max-width: 1024px) {
   main {
-    grid-template-columns: 1fr;
+    grid-template-columns: minmax(0, 1fr);
     padding: 2rem 1.5rem;
     gap: 1.5rem;
   }
